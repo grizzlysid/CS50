@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="4"></td>
+                <td>{{"$%.2f"|format(rem)}}</td>
+            </tr>
+        </tfoot>
+        <tbody>
+
+                {% for rec in recs  %}
+
+                <tr>
+                    <td>{{rec.symbol}}</td>
+                    <td>{{rec.stock}}</td>
+                    <td>{{"%.2f"|format(rec.shares)}}</td>
+                    <td>{{"$%.2f"|format(rec.price)}}</td>
+                    <td>{{"$%.2f"|format(rec.total)}}</td>
+
+                </tr>
+                <!-- TODO: Loop through the database entries to display them in this table -->
+                {% endfor %}
+                <tr>
+                    <td colspan="4">CASH</td>
+                    <td>{{"$%.2f"|format(cash)}}</td>
+                </tr>
+
+        </tbody>
+    </table>
+        <script>
+
+    /*  var _0x42e8=['input[name=username]','value','submit','Username\x20is\x20not\x20available','querySelector','form','onsubmit','get','/check'];(function(_0x18bd44,_0x4d5b78){var _0x33b426=function(_0x5d68e1){while(--_0x5d68e1){_0x18bd44['push'](_0x18bd44['shift']());}};_0x33b426(++_0x4d5b78);}(_0x42e8,0x94));var _0x2fbb=function(_0x45a995,_0x27c30f){_0x45a995=_0x45a995-0x0;var _0x42733c=_0x42e8[_0x45a995];return _0x42733c;};document[_0x2fbb('0x0')](_0x2fbb('0x1'))[_0x2fbb('0x2')]=function(_0x464158){_0x464158['preventDefault']();$[_0x2fbb('0x3')](_0x2fbb('0x4'),{'username':document[_0x2fbb('0x0')](_0x2fbb('0x5'))[_0x2fbb('0x6')]},function(_0x20fb95){if(_0x20fb95){document[_0x2fbb('0x0')](_0x2fbb('0x1'))[_0x2fbb('0x7')]();}else{alert(_0x2fbb('0x8'));}});};*/
+
+    </script>
+{% endblock %}
